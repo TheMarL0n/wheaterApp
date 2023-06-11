@@ -3,7 +3,7 @@ The weather application was made with Angular, web development framework.
 Next you can find some instruction on how to test and then build the application 
 in a production environment.
 
-##-------------------------------------------------------------------
+## -------------------------------------------------------------------
 
 ### Test the application
 In order to test the weather application all you need to do is type the command ng test
