@@ -23,7 +23,7 @@ with all the files that a hosting service needs for serving the application.
 is the deployment of the application wich can be done automatic or manual
 
 ### Run the application
-For runiing the application in a development enviroment follow the next steps:
+For running the application in a development environment follow the next steps:
 
 1.Download the source code from the repository.
 
