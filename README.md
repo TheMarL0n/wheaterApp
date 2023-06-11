@@ -21,3 +21,18 @@ with all the files that a hosting service needs for serving the application.
 
 3.Then you can copy the contents of the `dist/weather-app` folder to any web server. This
 is the deployment of the application wich can be done automatic or manual
+
+### Run the application
+For runiing the application in a development enviroment follow the next steps:
+
+1.Download the source code from the repository.
+
+2.Unzip the archive and change directory to the newly created project.
+
+3.To download and install npm packages, use the following npm CLI command `npm install`.
+
+4.Use the following CLI command `ng serve` to run your application locally.
+
+5.To see your application in the browser, go to `http://localhost:4200/`. If the default 
+port 4200 is not available, you can specify another port with the port flag as in the 
+following example: `ng serve --port 4201`
