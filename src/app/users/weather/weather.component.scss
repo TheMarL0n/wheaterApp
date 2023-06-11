@@ -1,0 +1,34 @@
+.bg-base {
+    background: rgba(0, 0, 0, 0.2);
+}
+.big-text {
+    font-size: 120px;
+}
+.logo-text {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.anim-cloud {
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
+}
+/* animation */
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+    .big-text {
+        font-size: 60px;
+    }
+    .m-5{
+        margin: 0 !important;
+    }
+}

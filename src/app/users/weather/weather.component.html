@@ -1,0 +1,77 @@
+<main class="m-5 bg-base rounded-3">
+    <nav class="navbar navbar-expand-lg p-2">
+        <div class="container-fluid">
+            <h4 class="text-light text-uppercase logo-text"><span><img width="50" src="../../../assets/img/logo.png"
+                        alt=""></span> Weather<br>App</h4>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                </ul>
+                <div class="d-flex column-gap-3">
+                    <p class="m-0 text-light">Welcome {{checktoken}}!</p>
+                    <span class="text-light">|</span>
+                    <a class="text-light" href="./login">Check another City</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div *ngIf="apidata" class="col-lg-12 bg-base">
+        <div class="d-flex justify-content-center">
+            <div class="col-lg-6 p-3">
+                <h3 class="fw-bold text-light">Current weather</h3>
+            </div>
+            <div class="col-lg-6 p-3 d-flex justify-content-end align-items-center">
+                <p class="fw-bold text-light m-0">
+                    <span><i class="bi bi-geo-alt-fill"></i></span>
+                    {{ apidata.city.name }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-5 pt-5 mb-4">
+        <div *ngIf="apidatacurrent" class="container-fluid">
+            <div class="row align-items-center text-center">
+                <div class="col-lg-4 col-lg-4 justify-content-center d-flex align-items-center">
+                    <img class="anim-cloud" src='http://openweathermap.org/img/wn/{{ apidatacurrent.current.weather[0].icon }}@4x.png' alt="">
+                </div>
+                <div class="col-lg-4 col-lg-4 justify-content-center d-flex flex-column">
+                    <h1 class="big-text text-light">{{ apidatacurrent.current.temp }}°</h1>
+                    <p class="text-light">Feels like: <span>{{apidatacurrent.current.feels_like}}°</span></p>
+                </div>
+                <div class="col-lg-4 col-lg-4 justify-content-center d-flex">
+                    <div>
+                        <p class="text-light fs-5"><span><i class="bi bi-wind"></i></span> {{
+                            apidatacurrent.current.wind_speed }}m/s</p>
+                        <p class="text-light fs-5"><span><i class="bi bi-droplet"></i></span> {{
+                            apidatacurrent.current.humidity }}%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div *ngIf="apidatacurrent" class="px-5 pt-5 pb-5 mb-4 border-top">
+        <div class="row row-cols-1 row-cols-lg-4 g-2 g-lg-3">
+            <div class="col" *ngFor="let periods of [].constructor(4); let i = index">
+                <div class="p-4 bg-base rounded-3">
+                    <p id='index-{{i}}' class="text-light text-uppercase">{{ (apidatacurrent.daily[i].dt * 1000) | date:"EEE, d" }}</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src='http://openweathermap.org/img/wn/{{ apidatacurrent.daily[i].weather[0].icon }}.png' alt="">
+                        <h1 class="text-light">{{ apidatacurrent.daily[i].temp.day }}°</h1>
+                    </div>
+                    <p class="text-light fs-5 m-0 text-capitalize">{{ apidatacurrent.daily[i].weather[0].description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>

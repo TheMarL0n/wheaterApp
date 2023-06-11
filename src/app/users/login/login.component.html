@@ -1,0 +1,78 @@
+<section class="login-section h-100">
+    <div class="container d-flex justify-content-center align-items-center h-100">
+  
+      <div class="col-lg-4 text-center">
+        <img class="mb-3" width="80" src="../../../assets/img/logo.png" alt="">
+        <h1 class="text-light">Please, fill the form before continue</h1>
+      </div>
+  
+      <br/>
+  
+      <div class="col-lg-4">
+        <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+          <div *ngIf="errmsgshow" class="alert alert-danger" role="alert">
+            {{errmsg}}
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" id="inputUsername" formControlName="username" placeholder="Your full name">
+          </div>
+          <div class="mb-3">
+            <select class="form-select" id="inputCity" formControlName="city" aria-label="Default select example">
+              <option value="" disabled selected>Select a city</option>
+              <option value="lat=32.3777&lon=-86.3005">Alabama,Montgomery</option>
+              <option value="lat=58.3015&lon=-134.4202">Alaska,Juneau</option>
+              <option value="lat=33.4481&lon=-112.0969">Arizona,Phoenix</option>
+              <option value="lat=34.7466&lon=-92.2889">Arkansas,Little Rock</option>
+              <option value="lat=38.5766&lon=-121.4936">California,Sacramento</option>
+              <option value="lat=38.5766&lon=-121.4936">Colorado,Denver</option>
+              <option value="lat=41.7640&lon=-72.6821">Connecticut,Hartford</option>
+              <option value="lat=39.1573&lon=-75.5197">Delaware,Dover</option>
+              <option value="lat=21.3074&lon=-157.8573">Hawaii,Honolulu</option>
+              <option value="lat=30.4381&lon=-84.2812">Florida,Tallahassee</option>
+              <option value="lat=33.7490&lon=-84.3882">Georgia,Atlanta</option>
+              <option value="lat=43.6177&lon=-116.1997">Idaho,Boise</option>
+              <option value="lat=39.7983&lon=-89.6549">Illinois,Springfield</option>
+              <option value="lat=39.7686&lon=-86.1626">Indiana,Indianapolis</option>
+              <option value="lat=41.5910&lon=-93.6037">Iowa,Des Moines</option>
+              <option value="lat=39.0481&lon=-95.6779">Kansas,Topeka</option>
+              <option value="lat=38.1867&lon=-84.8753">Kentucky,Frankfort</option>
+              <option value="lat=30.4570&lon=-91.1873">Louisiana,Baton Rouge</option>
+              <option value="lat=44.3071&lon=-69.7816">Maine,Augusta</option>
+              <option value="lat=38.9787&lon=-76.4909">Maryland,Annapolis</option>
+              <option value="lat=42.3581&lon=-71.0636">Massachusetts,Boston</option>
+              <option value="lat=42.7336&lon=-84.5553">Michigan,Lansing</option>
+              <option value="lat=44.9550&lon=-93.1022">Minnesota,St. Paul</option>
+              <option value="lat=32.3038&lon=-90.1821">Mississippi,Jackson</option>
+              <option value="lat=38.5792&lon=-92.1729">Missouri,Jefferson City</option>
+              <option value="lat=46.5857&lon=-112.0184">Montana,Helena</option>
+              <option value="lat=40.8080&lon=-96.6996">Nebraska,Lincoln</option>
+              <option value="lat=39.1639&lon=-119.7661">Nevada,Carson City</option>
+              <option value="lat=43.2068&lon=-71.5379">New Hampshire,Concord</option>
+              <option value="lat=40.2205&lon=-74.7699">New Jersey,Trenton</option>
+              <option value="lat=35.6822&lon=-105.9397">New Mexico,Santa Fe</option>
+              <option value="lat=35.7804&lon=-78.6390">North Carolina,Raleigh</option>
+              <option value="lat=46.8208&lon=-100.7833">North Dakota,Bismarck</option>
+              <option value="lat=42.6528&lon=-73.7578">New York,Albany</option>
+              <option value="lat=39.9613&lon=-82.9990">Ohio,Columbus</option>
+              <option value="lat=35.4922&lon=-97.5033">Oklahoma,Oklahoma City</option>
+              <option value="lat=44.9384&lon=-123.0304">Oregon,Salem</option>
+              <option value="lat=40.2643&lon=-76.8835">Pennsylvania,Harrisburg</option>
+              <option value="lat=41.8309&lon=-71.4149">Rhode Island,Providence</option>
+              <option value="lat=34.0003&lon=-81.0332">South Carolina,Columbia</option>
+              <option value="lat=44.3670&lon=-100.3464">South Dakota,Pierre</option>
+              <option value="lat=36.1658&lon=-86.7842">Tennessee,Nashville</option>
+              <option value="lat=30.2746&lon=-97.7403">Texas,Austin</option>
+              <option value="lat=40.7774&lon=-111.8882">Utah,Salt Lake City</option>
+              <option value="lat=44.2624&lon=-72.5805">Vermont,Montpelier</option>
+              <option value="lat=37.5388&lon=-77.4336">Virginia,Richmond</option>
+              <option value="lat=47.0358&lon=-122.9050">Washington,Olympia</option>
+              <option value="lat=38.3362&lon=-81.6123">West Virginia,Charleston</option>
+              <option value="lat=43.0746&lon=-89.3844">Wisconsin,Madison</option>
+              <option value="lat=41.1402&lon=-104.8202">Wyoming,Cheyenne</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-dark w-100 text-uppercase">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
