@@ -24,6 +24,23 @@
     }
 }
 
+.quality-1.quality-good{
+    display: block !important;
+}
+.quality-2.quality-fair{
+    display: block !important;
+}
+.quality-3.quality-moderate{
+    display: block !important;
+}
+.quality-4.quality-poor{
+    display: block !important;
+}
+.quality-5.quality-very{
+    display: block !important;
+}
+
+
 @media (min-width: 320px) and (max-width: 600px) {
     .big-text {
         font-size: 60px;

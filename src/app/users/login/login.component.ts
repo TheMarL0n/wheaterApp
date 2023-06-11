@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Validators, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Validators, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,11 +7,16 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent {
 
   constructor(private router: Router) { }
+
+  title = 'weather-login';
+
   errmsg: any;
   errmsgshow = false;
+
   //Handle form and validate required fields
   loginForm = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -21,8 +26,8 @@ export class LoginComponent {
   //function for submiting form
   loginSubmit() {
     //if submited fields are valid
-    if (this.loginForm.valid) {
-      if ((this.loginForm.value.username) && (this.loginForm.value.city)) {
+    if ((this.loginForm.valid) && (this.loginForm.value.username) && (this.loginForm.value.city)) {
+      
         //clear error
         this.errmsgshow = false;
 
@@ -33,7 +38,7 @@ export class LoginComponent {
 
         //go to weather page
         this.router.navigate(['weather']);
-      }
+      
     } else {
       this.errmsgshow = true;
       this.errmsg = "All fields are required";
